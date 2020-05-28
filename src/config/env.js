@@ -1,0 +1,1 @@
+export const apiKeyMovieDb = "fd8ce2f844f09ce42c96c6d0875e7d30";
