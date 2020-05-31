@@ -1,6 +1,10 @@
 import React from 'react';
 import { Layout } from 'antd';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import {
+  BrowserRouter as Router, Switch, Route
+} from 'react-router-dom';
+
+import { MenuTop } from './components';
 import { Home, NewMovies, Popular, Search, Movie, Error } from './pages';
 
 function App() {
@@ -10,24 +14,24 @@ function App() {
   return (
     <Layout>
       <Router>
-        <Header>
-          header...
+        <Header style={ { zIndex: 1 } }>
+          <MenuTop/>
         </Header>
         <Content>
           <Switch>
-            <Route path="/" exat={ true }>
+            <Route path="/" exact={ true }>
               <Home/>
             </Route>
-            <Route path="/new-movies" exat={ true }>
+            <Route path="/new-movies" exact={ true }>
               <NewMovies/>
             </Route>
-            <Route path="/popular" exat={ true }>
+            <Route path="/popular" exact={ true }>
               <Popular/>
             </Route>
-            <Route path="/search" exat={ true }>
+            <Route path="/search" exact={ true }>
               <Search/>
             </Route>
-            <Route path="/movie/:id" exat={ true }>
+            <Route path="/movie/:id" exact={ true }>
               <Movie/>
             </Route>
             <Route path="*">

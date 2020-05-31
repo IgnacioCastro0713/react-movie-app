@@ -1,18 +1,6 @@
 // base
-import Home from './Home';
-import Error from './Error';
+export { default as Home } from './Home';
+export { default as Error } from './Error';
 // movie
-import Movie from "./movie/Movie";
-import NewMovies from "./movie/NewMovies";
-import Popular from "./movie/Popular";
-import Search from "./movie/Search"
-
-export {
-  Home,
-  Error,
-  Movie,
-  NewMovies,
-  Popular,
-  Search
-}
+export {Movie, NewMovies, Popular, Search} from './movie';
 
