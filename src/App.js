@@ -5,7 +5,7 @@ import {
 } from 'react-router-dom';
 
 import { MenuTop } from './components';
-import { Home, NewMovies, Popular, Search, Movie, Error } from './pages';
+import { Home, NewMovies, Popular, Search, Movie, Error404 } from './pages';
 
 function App() {
 
@@ -35,7 +35,7 @@ function App() {
               <Movie/>
             </Route>
             <Route path="*">
-              <Error/>
+              <Error404/>
             </Route>
           </Switch>
         </Content>
