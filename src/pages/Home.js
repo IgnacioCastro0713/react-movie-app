@@ -1,13 +1,12 @@
 import React from 'react';
 import useFetch from '../hooks/useFetch';
-import {apiKeyMovieDb} from '../config/env';
+import { Slider } from '../components';
+
+import { API_KEY, API_URL } from '../config/env';
 
 export default function Home() {
-  const movies = useFetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKeyMovieDb}&language=es-ES&page=1`);
-
-  console.log(movies);
-
-  return (<div>
-    <h1>Home</h1>
-  </div>)
+  const newMovies = useFetch(`${ API_URL }/movie/now_playing?api_key=${ API_KEY }&language=es-ES&page=1`);
+  return <>
+    <Slider movies={ newMovies }/>
+  </>
 }
