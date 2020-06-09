@@ -32,7 +32,7 @@ function Render(props) {
     <ListAntd.Item className='movie-list__movie'>
       <ListAntd.Item.Meta
         avatar={ <Avatar src={ posterPath }/> }
-        title={ <Link to={ `/movie/${ id }` }/> }
+        title={ <Link to={ `/movie/${ id }` }>{ title }</Link> }
       />
       <Link to={ `/movie/${ id }` }>
         <Button type='primary' icon={ <RightOutlined/> }/>
