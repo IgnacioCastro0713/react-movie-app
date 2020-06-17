@@ -4,7 +4,7 @@ import {
   BrowserRouter as Router, Switch, Route
 } from 'react-router-dom';
 
-import { MenuTop } from './components';
+import { Footer, MenuTop } from './components';
 import { Home, NewMovies, Popular, Search, Movie, Error404 } from './pages';
 
 function App() {
@@ -39,6 +39,7 @@ function App() {
             </Route>
           </Switch>
         </Content>
+        <Footer/>
       </Router>
     </Layout>
   );

@@ -7,9 +7,11 @@ import { Row, Col } from 'antd';
 import { API_KEY, API_URL } from '../config/env';
 
 export default function Home() {
+
   const newMovies = useFetch(`${ API_URL }/movie/now_playing?api_key=${ API_KEY }&language=es-ES&page=1`);
   const popularMovies = useFetch(`${ API_URL }/movie/popular?api_key=${ API_KEY }&language=es-ES&page=1`);
-  //console.log(popularMovies);
+  const topRateMovies = useFetch(`${ API_URL }/movie/top_rated?api_key=${ API_KEY }&language=es-ES&page=1`);
+
   return <>
     <Slider movies={ newMovies }/>
     <Row>
@@ -17,7 +19,7 @@ export default function Home() {
         <List title='Popular Movies' movies={ popularMovies }/>
       </Col>
       <Col span={ 12 }>
-        <List movies={ popularMovies }/>
+        <List title='Top Rate Movies' movies={ topRateMovies }/>
       </Col>
     </Row>
   </>
