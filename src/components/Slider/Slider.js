@@ -1,5 +1,5 @@
 import React from 'react';
-import { Carousel, Button } from 'antd';
+import { Button, Carousel } from 'antd';
 import { Link } from 'react-router-dom';
 import Loading from '../Loading'
 

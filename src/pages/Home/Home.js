@@ -1,10 +1,10 @@
 import React from 'react';
-import useFetch from '../hooks/useFetch';
-import { Slider, List } from '../components';
+import useFetch from '../../hooks/useFetch';
+import { Slider, List } from '../../components';
 import { Row, Col } from 'antd';
 
 
-import { API_KEY, API_URL } from '../config/env';
+import { API_KEY, API_URL } from '../../config/env';
 
 export default function Home() {
 

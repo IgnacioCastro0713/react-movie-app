@@ -3,7 +3,7 @@ import { Spin } from 'antd';
 
 import './Loading.scss';
 
-function Loading(props) {
+function Loading() {
   return (
     <div className="loading">
       <Spin size="large"/>
