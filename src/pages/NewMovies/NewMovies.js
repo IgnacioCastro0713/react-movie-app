@@ -3,21 +3,18 @@ import { Col, Row } from "antd/lib";
 import { API_KEY, API_URL } from '../../config/env';
 import { Loading, MovieCatalog, Pagination } from '../../components';
 
-export default function NewMovies() {
+function NewMovies() {
   const [movieList, setMovieList] = useState([]);
   const [page, setPage] = useState(1);
 
   useEffect(() => {
     (async () => {
-      const response = await fetch(`${ API_URL }/movie/now_playing?api_key=${ API_KEY }&language=es-ES&page=${ page }`);
-      const movies = await response.json();
+      const movies = await (await fetch(`${ API_URL }/movie/now_playing?api_key=${ API_KEY }&language=es-ES&page=${ page }`)).json();
       setMovieList(movies);
     })();
   }, [page]);
 
-  const onChangePage = page => {
-    setPage(page);
-  };
+  const onChangePage = page => setPage(page);
 
   return (
     <Row>
@@ -44,3 +41,5 @@ export default function NewMovies() {
     </Row>
   );
 }
+
+export default NewMovies

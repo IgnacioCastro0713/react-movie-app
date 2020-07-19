@@ -11,10 +11,10 @@ export default function useFetch(url, options) {
         const result = await fetch(url, options);
         const json = await result.json();
         setResult(json);
-        setLoading(false)
+        setLoading(false);
       } catch (error) {
         setError(error);
-        setLoading(false)
+        setLoading(false);
       }
     })();
   }, [url, options]);
