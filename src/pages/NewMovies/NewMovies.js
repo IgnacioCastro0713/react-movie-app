@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Col, Row } from "antd/lib";
 import { API_KEY, API_URL } from '../../config/env';
-import { Loading, MovieCatalog } from '../../components';
+import { Loading, MovieCatalog, Pagination } from '../../components';
 
 export default function NewMovies() {
   const [movieList, setMovieList] = useState([]);
@@ -15,6 +15,10 @@ export default function NewMovies() {
     })();
   }, [page]);
 
+  const onChangePage = page => {
+    setPage(page);
+  };
+
   return (
     <Row>
       <Col span={ 24 } style={ { textAlign: "center", marginTop: 25 } }>
@@ -24,9 +28,13 @@ export default function NewMovies() {
       </Col>
       { movieList.results ? (
         <Row>
-
           <MovieCatalog movies={ movieList }/>
-
+          <Col span={ 24 }>
+            <Pagination
+              currentPage={ movieList.page }
+              totalItems={ movieList.total_results }
+              onChangePage={ onChangePage }/>
+          </Col>
         </Row>
       ) : (
         <Col span={ 24 }>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import { Card, Col } from "antd";
 import { EyeFilled } from '@ant-design/icons';
 
@@ -16,8 +16,7 @@ function MovieCatalog(props) {
   );
 }
 
-function MovieCard(props) {
-  const { movie: { id, title, poster_path } } = props;
+function MovieCard({ movie: { id, title, poster_path } }) {
   const { Meta } = Card;
   const posterPath = `https://image.tmdb.org/t/p/original/${ poster_path }`;
 
