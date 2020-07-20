@@ -13,7 +13,7 @@ function App() {
 
   return (
     <Layout>
-      <Router basename="/">
+      <Router basename={process.env.PUBLIC_URL}>
         <Header style={ { zIndex: 1 } }>
           <MenuTop/>
         </Header>
