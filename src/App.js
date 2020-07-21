@@ -1,7 +1,7 @@
 import React from 'react';
 import { Layout } from 'antd';
 import {
-  BrowserRouter as Router, Switch, Route
+  BrowserRouter as Router, Switch, Route, HashRouter
 } from 'react-router-dom';
 
 import { Footer, MenuTop } from './components';
@@ -13,7 +13,7 @@ function App() {
 
   return (
     <Layout>
-      <Router basename={process.env.PUBLIC_URL}>
+      <HashRouter  basename={process.env.PUBLIC_URL}>
         <Header style={ { zIndex: 1 } }>
           <MenuTop/>
         </Header>
@@ -40,7 +40,7 @@ function App() {
           </Switch>
         </Content>
         <Footer/>
-      </Router>
+      </HashRouter>
     </Layout>
   );
 }
